@@ -88,6 +88,7 @@ $(document).ready(function() {
                     });
                     $('#selectCity-group').show(300);
                     $('#selectDistrict').find('option').remove();
+                    $('#selectDistrict-group').hide(300);
 				} else {
                     $('#selectCity-group').hide(300);
                     $('#selectCity').find('option').remove();
