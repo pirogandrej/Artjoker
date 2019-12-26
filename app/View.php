@@ -10,7 +10,7 @@ class View {
 
 	public function __construct($route) {
 		$this->route = $route;
-		$this->path = $route['controller'].'/'.$route['action'];
+        $this->path = strtolower($route['controller']) . '/' . $route['action'];
 	}
 
 	public function render($title, $vars = []) {
