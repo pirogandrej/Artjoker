@@ -8,9 +8,15 @@ class Database {
 
 	protected $db;
 	
-	public function __construct() {
-		$config = require 'config/database.php';
-		$this->db = new PDO('mysql:host=' . $config['host'] . ';dbname=' . $config['database'] . '', $config['username'], $config['password']);
+	public function __construct()
+    {
+        $config = require 'config/database.php';
+        $this->db = new PDO(
+            'mysql:host=' . $config['host'] . ';dbname=' . $config['database'] . '',
+            $config['username'],
+            $config['password']
+        );
+        $this->db->query("SET NAMES 'utf8'");
 	}
 
 	public function query($sql) {
